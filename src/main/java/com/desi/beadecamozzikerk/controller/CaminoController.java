@@ -27,7 +27,7 @@ public class CaminoController {
     @Autowired
     private ICiudadService ciudadService;
     
-    @SuppressWarnings("unchecked")
+    //@SuppressWarnings("unchecked")
 	@GetMapping
 	
              public String listarCaminos(Model model) {
@@ -43,7 +43,7 @@ public class CaminoController {
     public String agregarCamino(@ModelAttribute Camino camino, RedirectAttributes redirectAttributes) {
         try {
             caminoService.guardar(camino);
-            redirectAttributes.addFlashAttribute("success", "Camnno agregado correctamente.");
+            redirectAttributes.addFlashAttribute("success", "Camino agregado correctamente.");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Error al agregar el camino: " + e.getMessage());
         }
